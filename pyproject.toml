@@ -20,11 +20,14 @@ readme = "README.md"
 packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 langchain = "^0.0.322"
 anthropic = "^0.5.0"
 chromadb = "^0.4.14"
 jupyterlab = "^4.0.7"
+sentence-transformers = "^2.2.2"
+ipykernel = "^6.26.0"
+toml = "^0.10.2"
 
 
 [build-system]
