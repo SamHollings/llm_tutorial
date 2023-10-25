@@ -18,8 +18,10 @@ This repo contains guides on:
 - system-wise: the requirements can be found in the [`pyproject.toml`](pyproject.toml) file, and can be loaded using `poetry`.
 
 ## Getting Started
-### open in google colab
-...
+### Google Colab
+<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_tutorial/blob/main/llm_tutorial.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
 ### Clone the repo
 
