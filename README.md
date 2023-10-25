@@ -1,69 +1,39 @@
-# RAP repository template
+# LLM Tutorial
 
-:exclamation: Warning: this repository may contain references internal to NHS England that cannot be accessed publicly
-
-> Describe your project in 1-3 sentences.
-
-A template Python repository that can be adapted for RAP projects.
-
-_A **repository** is something that contains all of your project's files and and each file's revision history._
-
-## Link to publication
-
-> Include a link to where your publication is published.
+This repo contains notebooks which walk you through some simple LLM implementations. It uses free software and can all be run inside google collab, for maximum accessibility.
 
 ## Contact
-**This repository is maintained by NHS England Data Science Team**.
-> _To contact us raise an issue on Github or via [email](mailto:england.rapchampions@nhs.net)._
-> 
-> See our (and our colleagues') other work here: [NHS England Analytical Services](https://github.com/NHSDigital/data-analytics-services)
+
+This repo is currently maintained by @samhollings - raise and issue or a pull request if you have any suggestions (or just contact me directly!)
 
 ## Description
 
-> Provide more detailed overview of the project, including (if relevant) a description of the publication process.
-
-This repository is intended to function as a template for Python RAP projects at NHS England.
-
-You can learn more about project structure and why it's important in the ['project structure and packaging guide'](https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/project-structure-and-packaging/) of the RAP community of practice Github repo, a central source of RAP knowledge.
-
-_You can edit any part of this document. The licence section **must be edited** before publishing this repository publicly. For more information about publishing your project please see the ['how to publish your code in the open' guide](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/how-to-publish-your-code-in-the-open/)._
+This repo contains guides on:
+- [**RAG (Retreival Augemented Generation)**](llm_tutorial.ipynb): an LLM which looks things up in a database before responding - a cheap and easy way of make it seem like an LLM has local knowledge
+- more coming soon...
 
 ## Prerequisites
 
-> If applicable, list the items a user needs to be able to use your repository, such as a certain version of a programming language. It can be useful to link to documentation on how to install these items.
-
-* Python (> 3.0)
+- knowledge-wise, some ability with python. Knowledge of data science would be useful, but not crucial (at least at the start). Interest in LLMs will help!
+- system-wise: the requirements can be found in the [`pyproject.toml`](pyproject.toml) file, and can be loaded using `poetry`.
 
 ## Getting Started
+### open in google colab
+...
 
-> Tell the user how to get started (using a numbered list can be helpful). List one action per step with example code if possible.
+### Clone the repo
 
-1. Clone the repository. To learn about what this means, and how to use Git, see the [Git guide](https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/using-git-collaboratively/).
+Clone the repository. To learn about what this means, and how to use Git, see the [Git guide](https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/using-git-collaboratively/).
 
 ```
 git clone <insert URL>
 ```
 
-2. Set up your environment, _either_ using [pip](https://pypi.org/project/pip/) or [conda](https://www.anaconda.com/). For more information on how to use virtual environments and why they are important,. see the [virtual environments guide](https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/virtual-environments/why-use-virtual-environments/).
+### Using poetry
+- `pip install poetry` to ensure you have poetry on your python installation 
+- in directory where you have cloned this repo, in a terminal run: `poetry install`
+    - if you use VSCode, you might want to make it so poetry makes the venv locally - before doing poetry install run this: `poetry config virtualenvs.in-project true`
 
-### Using pip
-```
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-```
-For Visual Studio Code it is necessary that you change your default interpreter to the virtual environment you just created .venv. To do this use the shortcut Ctrl-Shift-P, search for Python: Select interpreter and select .venv from the list.
-### Using conda
-The first line of the `environment.yml` file sets the new environment's name. In this template, the name is `rap_template`- you should change this in the `environment.yml` file, as well as the following code, to the name of your project.
-```
-conda env create -f environment.yml
-conda activate <environment_name>
-```
-3. _Optional_: In the terminal, change the directory into the cloned repos' directory, and run the example publication script:
-```
-cd rap-package-template
-python examples/example_create_publication.py
-```
 
 ## Project structure
 

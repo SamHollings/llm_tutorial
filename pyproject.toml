@@ -1,6 +1,3 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
 
 [project]
 name = "rap-package-template"
@@ -13,3 +10,23 @@ requires-python = ">=3.10"
 
 [project.urls]
 "Homepage" = "https://nhsdigital.github.io/rap-community-of-practice/"
+
+[tool.poetry]
+name = "llm_tutorial"
+version = "0.1.0"
+description = ""
+authors = ["Sam Hollings <sam.hollings1@nhs.net>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.0.322"
+anthropic = "^0.5.0"
+chromadb = "^0.4.14"
+jupyterlab = "^4.0.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
