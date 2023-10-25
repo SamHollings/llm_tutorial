@@ -11,6 +11,7 @@
 *.ipynb_checkpoints
 *.xlsx
 *.xls
+db/
 
 # Exceptions- use ! to include files that would otherwise be ignored
 !publication_template.xlsx
