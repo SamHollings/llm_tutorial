@@ -7,7 +7,7 @@
 # Avoid committing any data. If you need to make an exception for one file you can do that separately
 *.csv
 *.ipynb
-!llm_tutorial.ipynb
+!llm_tutorial_rag.ipynb
 *.ipynb_checkpoints
 *.xlsx
 *.xls
