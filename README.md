@@ -9,7 +9,7 @@ This repo is currently maintained by @samhollings - raise and issue or a pull re
 ## Description
 
 This repo contains guides on:
-- [**RAG (Retreival Augemented Generation)**](llm_tutorial_rag.ipynb): an LLM which looks things up in a database before responding - a cheap and easy way of make it seem like an LLM has local knowledge
+- [**RAG (Retreival Augemented Generation)**](llm_tutorial.ipynb): an LLM which looks things up in a database before responding - a cheap and easy way of make it seem like an LLM has local knowledge
 - more coming soon...
 
 ## Prerequisites
@@ -19,7 +19,7 @@ This repo contains guides on:
 
 ## Getting Started
 ### Google Colab
-<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_tutorial/blob/main/llm_tutorial_rag.ipynb">
+<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_tutorial/blob/main/llm_tutorial.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
