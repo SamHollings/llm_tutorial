@@ -8,6 +8,7 @@
 *.csv
 *.ipynb
 !llm_tutorial_rag.ipynb
+!llm_tutorial_rag_sources.ipynb
 *.ipynb_checkpoints
 *.xlsx
 *.xls

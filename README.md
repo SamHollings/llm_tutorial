@@ -12,7 +12,10 @@ This repo contains guides on:
 - [**RAG (Retreival Augemented Generation)**](llm_tutorial_rag.ipynb)<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_tutorial/blob/main/llm_tutorial_rag.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>: an LLM which looks things up in a database before responding - a cheap and easy way of make it seem like an LLM has local knowledge
-- more coming soon...
+- [**RAG with sources** (more detailed and more control over what the pipeline does)](llm_tutorial_rag_sources.ipynb)<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_tutorial/blob/main/llm_tutorial_rag_sources.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+more coming soon...
 
 ## Prerequisites
 
