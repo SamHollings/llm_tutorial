@@ -12,15 +12,15 @@ This repo contains guides on:
 - [**RAG (Retreival Augemented Generation)**](llm_tutorial_rag.ipynb)<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_tutorial/blob/main/llm_tutorial_rag.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>: an LLM which looks things up in a database before responding - a cheap and easy way of make it seem like an LLM has local knowledge
-- [**RAG with sources** (more detailed and more control over what the pipeline does)](llm_tutorial_rag_sources.ipynb)<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_tutorial/blob/main/llm_tutorial_rag_sources.ipynb">
+- [**RAG with sources**](llm_tutorial_rag_sources.ipynb)<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_tutorial/blob/main/llm_tutorial_rag_sources.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-</a>
-more coming soon...
+</a> : shows you how get the LLM to give sources for it's claims, and generally how to have more control over the prompts used in the pipeline.
+- more coming soon...
 
 ## Prerequisites
 
 - knowledge-wise, some ability with python. Knowledge of data science would be useful, but not crucial (at least at the start). Interest in LLMs will help!
-- system-wise: the requirements can be found in the [`pyproject.toml`](pyproject.toml) file, and can be loaded using `poetry`.
+- system-wise: the requirements can be found in the [`requirements.txt`](requirements.txt) file, and can be loaded `pip`.
 
 ## Getting Started
 ### Google Colab
@@ -34,55 +34,45 @@ Clone the repository. To learn about what this means, and how to use Git, see th
 git clone <insert URL>
 ```
 
-### Using poetry
-- `pip install poetry` to ensure you have poetry on your python installation 
-- in directory where you have cloned this repo, in a terminal run: `poetry install`
-    - if you use VSCode, you might want to make it so poetry makes the venv locally - before doing poetry install run this: `poetry config virtualenvs.in-project true`
+### install dependencies
 
+Make a [virtual environment](https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/virtual-environments/venv/) and install the dependencies:
+```
+pip install -r requirements.txgt
+```
 
 ## Project structure
 
-> Provide the user with an outline of your repository structure. This template is primarily designed for publications teams at NHS England. Projects with different requirements (e.g. more complex documentation and modelling) should look to [DrivenData's cookiecutter project structure](https://drivendata.github.io/cookiecutter-data-science/#directory-structure), as well as our [Community of Practice](https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/project-structure-and-packaging/) for guidance.
 
 ```text
+|   .env_example                      <- Copy this, rename to ".env" and fill in with your keys. It's used to store access tokens.
 |   .gitignore                        <- Files (& file types) automatically removed from version control for security purposes
 |   config.toml                       <- Configuration file with parameters we want to be able to change (e.g. date)
-|   environment.yml                   <- Conda equivalent of requirements file
-|   requirements.txt                  <- Requirements for reproducing the analysis environment 
+|   llm_tutorial_rag_sources.ipynb    <- a tutorial for how do get a RAG LLM to give citations for its claims
+|   llm_tutorial_rag.ipynb            <- a basic tutorial introducing RAG
+|   requirements.txt                  <- The list of python libraries we've used, used by pip to install them.
 |   pyproject.toml                    <- Configuration file containing package build information
 |   LICENCE                           <- License info for public distribution
 |   README.md                         <- Quick start guide / explanation of your project
-|
-|   create_publication.py             <- Runs the overall pipeline to produce the publication     
+|   
 |
 +---src                               <- Scripts with functions for use in 'create_publication.py'. Contains project's codebase.
 |   |       __init__.py               <- Makes the functions folder an importable Python module
 |   |
-|   +---utils                     <- Scripts relating to configuration and handling data connections e.g. importing data, writing to a database etc.
+|   +---utils                         <- Scripts relating to configuration and handling data connections e.g. importing data, writing 
+|   |                                    to a database etc.
 |   |       __init__.py               <- Makes the functions folder an importable Python module
-|   |       file_paths.py             <- Configures file paths for the package
 |   |       logging_config.py         <- Configures logging
-|   |       data_connections.py       <- Handles data connections i.e. reading/writing dataframes from SQL Server
-|   | 
-|   +---processing                    <- Scripts with modules containing functions to process data i.e. clean and derive new fields
+|   |
+|   +---processing                    <- [currently not used] Scripts with modules containing functions to process data i.e. clean and derive new fields
 |   |       __init__.py               <- Makes the functions folder an importable Python module
-|   |       clean.py                  <- Perform cleaning and wrangling processes 
-|   |       derive_fields.py          <- Create new field definitions, columns, derivations.
-|   | 
-|   +---data_ingestion                <- Scripts with modules containing functions to preprocess read data i.e. perform validation/data quality checks, other preprocessing etc.
+|   |
+|   +---data_ingestion                <- [currently not used] Scripts with modules containing functions to preprocess read data i.e. perform validationdata quality checks, other preprocessing etc.
 |   |       __init__.py               <- Makes the functions folder an importable Python module
-|   |       preprocessing.py          <- Perform preprocessing, for example preparing your data for metadata or data quality checks.
-|   |       validation_checks.py      <- Perform validation checks e.g. a field has acceptable values.
 |   |
 |   +---data_exports
-|   |       __init__.py               <- Makes the functions folder an importable Python module
-|   |       write_excel.py            <- Populates an excel .xlsx template with values from your CSV output.
-|   |
-+---sql                               <- SQL scripts for importing data  
-|       example.sql
+|   |       __init__.py               <- [currently not used] Makes the functions folder an importable Python module
 |
-+---templates                         <- Templates for output files
-|       publication_template.xlsx
 |
 +---tests
 |   |       __init__.py               <- Makes the functions folder an importable Python module
@@ -115,60 +105,10 @@ This directory contains the meaty parts of the code. By organising the code into
 
 ## Adapting for your project
 
-> Help users configure the repository for their needs. Note that the GitHub/GitLab differentiation is not a usual requirement for a README.
-
-### On GitHub
-
-The [version of this repository on GitHub](https://github.com/NHSDigital/rap-package-template) is out-of-date and will be updated shortly. You are able to create your own GitHub repository from the GitHub version of this template automatically by clicking 'Use this template'.
-
-### On GitLab
-
-Unfortunately the [ability to create a project from template](https://docs.gitlab.com/ee/user/project/working_with_projects.html#create-a-project-from-a-custom-template) is not available on the NHS England GitLab, so the process of using this template is rather manual.
-
-There are several workaround to use this template for your project on GitLab. One method is detailed below:
-
-1. Clone this repository, making sure to replace `<project name>` in the snippet below to the name of your project, **not using any spaces**. To learn about what this means, and how to use Git, see the [Git guide](https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/using-git-collaboratively/).
-
-        git clone https://nhsd-git.digital.nhs.uk/data-services/analytics-service/iuod/rap-repository-template.git <project_name>
-
-2. Change directory into this folder
-
-        cd <project_name>
-
-3. Delete the `.git` file (this removes the existing file revision history)
-
-        rmdir /s .git 
-
-4. Initialise git (this starts tracking file revision history)
-
-        git init
-5. Add the files in the repo to revision history and make the initial commit
-
-        git add .
-        git commit -m "Initial commit"
-6. Create a new blank repository for your project on GitLab
-7. Add the URL of this new repository to your template repo
-
-        git remote set-url origin <insert URL>
-8. Push to GitLab
-
-        git push -u origin main
-
------------
+Just take whatever code you need, and reimplement it. This was made mostly in the form of Jupyter notebooks for ease of use and demos, however I wouldn't recommend that for most applications - but it can be very useful when getting started and playing with the code.
 
 ## Licence
 
 > The [LICENCE](/LICENCE) file will need to be updated with the correct year and owner
 
 Unless stated otherwise, the codebase is released under the MIT License. This covers both the codebase and any sample code in the documentation.
-
-Any HTML or Markdown documentation is [© Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/) and available under the terms of the [Open Government 3.0 licence](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
-
-## Acknowledgements
-- [Connor Quinn](https://github.com/connor1q)
-- [Sam Hollings](https://github.com/SamHollings)
-- [Maakhe Ndhlela](https://github.com/maakhe)
-- [Harriet Sands](https://github.com/harrietrs)
-- [Xiyao Zhuang](https://github.com/xiyaozhuang)
-- [Helen Richardson](https://github.com/helrich)
-- [The RAP team](https://github.com/NHSDigital/rap-community-of-practice)!
