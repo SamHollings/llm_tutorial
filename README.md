@@ -38,7 +38,7 @@ git clone <insert URL>
 
 Make a [virtual environment](https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/virtual-environments/venv/) and install the dependencies:
 ```
-pip install -r requirements.txgt
+pip install -r requirements.txt
 ```
 
 ## Project structure
