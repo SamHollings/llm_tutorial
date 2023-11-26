@@ -15,6 +15,9 @@ This repo contains guides on:
 - [**RAG with sources**](llm_tutorial_rag_sources.ipynb)<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_tutorial/blob/main/llm_tutorial_rag_sources.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a> : shows you how get the LLM to give sources for it's claims, and generally how to have more control over the prompts used in the pipeline.
+- [**Open Source LLM using Llama2 **](llm_tutorial_llama2.ipynb)<a target="_blank" href="https://colab.research.google.com/github/SamHollings/llm_tutorial/blob/main/llm_tutorial_llama2.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a> (author: [Adam Hollings](https://github.com/AdamHollings) : Show you how to create your own llm chatbot using the open source llama2 model. No api token required!
 - more coming soon...
 
 ## Prerequisites
