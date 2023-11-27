@@ -9,6 +9,7 @@
 *.ipynb
 !llm_tutorial_rag.ipynb
 !llm_tutorial_rag_sources.ipynb
+!llm_tutorial_llama2.ipynb
 *.ipynb_checkpoints
 *.xlsx
 *.xls
